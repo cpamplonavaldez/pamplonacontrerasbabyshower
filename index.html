@@ -99,6 +99,7 @@
         .img-lg { max-height: 520px; }
         .img-wide { max-width: 620px; }
         .section-tight { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+        .rsvp-card { background: #ffffff; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
 </style>  
 </head>
   <body>
@@ -193,24 +194,38 @@
       <section id="section6" class="py-5">
         <div class="container">
           <h2 class="mb-4 text-center display-title hero-title mb-3">RSVP</h2>
-          <form class="row g-3 mx-auto" style="max-width: 720px;">
+          <form class="rsvp-card row g-3 mx-auto needs-validation" style="max-width: 720px;" action="https://submit-form.com/CQnKbH0iu">
+              <input
+                type="hidden"
+                name="_redirect"
+                value="https://pamplonacontrerasbabyshower.vercel.app"
+            />
             <div class="col-12">
-              <input type="text" class="form-control" placeholder="Full Name">
+              <label for="rsvpName" class="form-label">Name</label>
+              <input id="rsvpName" name="name" type="text" class="form-control" required>
+              <div class="invalid-feedback">Please enter your name.</div>
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Email">
+              <label for="rsvpGoing" class="form-label">Will You Be Attending?</label>
+              <select id="rsvpGoing" name="attending" class="form-select" required>
+                <option value="" selected disabled>Choose...</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <div class="invalid-feedback">Please select an option.</div>
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Phone">
+              <label for="rsvpGuests" class="form-label">How Many Guests (including you)?</label>
+              <input id="rsvpGuests" name="guestcount" type="number" class="form-control" min="0" step="1" value="0" required>
+              <div class="invalid-feedback">Please enter 0 or a positive number.</div>
             </div>
-            <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Number of Guests">
+            <div class="col-12">
+              <label for="rsvpMessage" class="form-label">Message to the Parents</label>
+              <textarea id="rsvpMessage" name="message" class="form-control" rows="4" required></textarea>
+              <div class="invalid-feedback">Please enter a message.</div>
             </div>
-            <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Notes">
-            </div>
-            <div class="col-12 d-grid d-sm-block">
-              <button type="submit" class="btn btn-primary px-4">Submit</button>
+            <div class="col-12 d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">Submit</button>
             </div>
           </form>
         </div>
@@ -220,4 +235,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
   </html>
-
