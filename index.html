@@ -1,722 +1,222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Chapter Yet: Baby Contreras</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-    <style>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Best Chapter Yet : Baby Contreras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+         /* --- Google Fonts Import --- */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@400;700&family=Playfair+Display:wght@700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        /* --- Global Styles --- */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Cormorant Garamond', serif;
-            color: #5a4a3a;
+            font-family: 'Lato', sans-serif;
+            background-color: #FFFBF0; /* Creamy background from PDF */
+            color: #4A4A4A; /* Dark grey text from PDF */
             line-height: 1.6;
-            background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 50%, #f0e0d0 100%);
-            overflow-x: hidden;
+            font-size: 20px; /* increase base text size */
+            color: #666b75;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .play-font {
+             font-family: 'Playfair Display', serif;
+             color: #666b75;
+             font-weight: 900;
         }
 
-        /* Hero Section with Magical Background */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 20px;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(to bottom, #f5e6d3 0%, #e8d5c4 50%, #d4c4b0 100%);
+        
+        .montserrat-font {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
         }
-
-        /* SVG Background */
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+        /* --- Theming & Utilities --- */
+        .display-title {
+           font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #3E3E3E;
+            font-size: clamp(2.2rem, 2.8vw + 1rem, 3.4rem);
         }
-
-        /* Floating Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-
-        @keyframes floatReverse {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(20px) rotate(-5deg); }
-        }
-
-        @keyframes glow {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1); }
-        }
-
-        /* Falling Elements */
-        .falling-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .falling-element {
-            position: absolute;
-            font-size: 20px;
-            animation: fall linear infinite;
-            opacity: 0;
-        }
-
-        /* Hero Content */
-        .hero-content {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 
-                0 20px 60px rgba(139, 101, 78, 0.2),
-                0 0 100px rgba(212, 165, 165, 0.3),
-                inset 0 0 30px rgba(255, 255, 255, 0.8);
-            border: 3px solid #c6a79a;
-            max-width: 800px;
-            position: relative;
-            z-index: 3;
-            animation: contentGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes contentGlow {
-            0%, 100% {
-                box-shadow: 
-                    0 20px 60px rgba(139, 101, 78, 0.2),
-                    0 0 100px rgba(212, 165, 165, 0.3),
-                    inset 0 0 30px rgba(255, 255, 255, 0.8);
-            }
-            50% {
-                box-shadow: 
-                    0 25px 70px rgba(139, 101, 78, 0.25),
-                    0 0 120px rgba(212, 165, 165, 0.4),
-                    inset 0 0 40px rgba(255, 255, 255, 1);
-            }
-        }
-
-        .book-decoration {
-            font-size: 80px;
-            margin-bottom: 20px;
-            filter: drop-shadow(2px 4px 6px rgba(139, 101, 78, 0.3));
-            animation: float 3s ease-in-out infinite;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-style: italic;
-            color: #5a4a3a;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(212, 165, 165, 0.3);
-        }
-
         .subtitle {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            color: #7a6a5a;
-            margin-bottom: 30px;
-            font-style: italic;
+            color: #6b6b6b;
+            font-size: 1.35rem;
+        }
+        .peach-card {
+            background-color: #F7C9C4; /* soft peach */
+            border: 0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            font-size: 1.05rem;
         }
 
-        .title-main {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            color: #5a4a3a;
-            margin: 30px 0 10px;
-            font-weight: 700;
-        }
-
-        .title-baby {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            color: #d4a5a5;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 8px rgba(212, 165, 165, 0.5);
-        }
-
-        /* Event Details Section */
-        .event-details {
-            padding: 80px 20px;
-            background: rgba(255, 255, 255, 0.6);
-            position: relative;
-            z-index: 10;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            text-align: center;
-            margin-bottom: 50px;
-            color: #5a4a3a;
-        }
-
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .detail-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(139, 101, 78, 0.1);
-            text-align: center;
-            border: 2px solid #e8d5c4;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .detail-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(139, 101, 78, 0.2);
-        }
-
-        .detail-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .detail-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #5a4a3a;
-            margin-bottom: 15px;
-        }
-
-        .detail-card p {
-            font-size: 1.2rem;
-            color: #7a6a5a;
-        }
-
-        /* Special Requests Section */
-        .special-requests {
-            padding: 80px 20px;
-            background: 
-                radial-gradient(circle at 30% 50%, rgba(198, 167, 154, 0.1) 0%, transparent 50%);
-            position: relative;
-            z-index: 10;
-        }
-
-        .requests-content {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 50px 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(139, 101, 78, 0.1);
-            border: 2px solid #e8d5c4;
-        }
-
-        .request-item {
-            margin-bottom: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid #e8d5c4;
-        }
-
-        .request-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .request-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: #5a4a3a;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .request-item p {
-            font-size: 1.2rem;
-            color: #7a6a5a;
-            line-height: 1.8;
-        }
-
-        /* Registry Section */
-        .registry {
-            padding: 80px 20px;
-            background: rgba(255, 255, 255, 0.6);
-            position: relative;
-            z-index: 10;
-        }
-
-        .registry-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .registry-btn {
-            display: inline-block;
-            padding: 20px 50px;
-            background: white;
-            color: #5a4a3a;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: 600;
-            border: 3px solid #c6a79a;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(139, 101, 78, 0.15);
-        }
-
-        .registry-btn:hover {
-            background: #c6a79a;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(139, 101, 78, 0.25);
-        }
-
-        /* RSVP Section */
-        .rsvp {
-            padding: 80px 20px;
-            background: 
-                radial-gradient(circle at 70% 50%, rgba(198, 167, 154, 0.1) 0%, transparent 50%);
-            position: relative;
-            z-index: 10;
-        }
-
-        .rsvp-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 50px 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(139, 101, 78, 0.1);
-            border: 2px solid #e8d5c4;
-        }
-
-        .form-group {
-            margin-bottom: 30px;
-        }
-
-        label {
-            display: block;
-            font-size: 1.2rem;
-            color: #5a4a3a;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="number"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e8d5c4;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-family: 'Cormorant Garamond', serif;
-            color: #5a4a3a;
-            transition: border-color 0.3s ease;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #c6a79a;
-        }
-
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 30px;
-            margin-top: 10px;
-        }
-
-        .radio-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        input[type="radio"] {
-            width: 20px;
-            height: 20px;
-            accent-color: #c6a79a;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background: #c6a79a;
-            color: white;
+        .btn-primary {
+            background-color: #F7C9C4;
+            color: #3E3E3E;
             border: none;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-family: 'Playfair Display', serif;
+        }
+
+        .btn-primary:hover {
+            background-color: #e07e73;
+            color: #3E3E3E;
+            border: none;
+        }
+        .badge-dot {
+            width: 28px; height: 28px;
+            border-radius: 8px;
+            background: #3E3E3E;
+            display: inline-block;
+        }
+        .decor-burst {
+            width: 72px; height: 72px; border-radius: 50%;
+            background: radial-gradient(circle, #3E3E3E 30%, #FFFBF0 31%);
+            box-shadow: 0 0 0 10px #FFFBF0 inset;
+        }
+        .pill-btn {
+            border-radius: 999px;
+            padding: 1rem 1.5rem;
             font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(139, 101, 78, 0.2);
+            background: #E7E7E7;
+            color: #3E3E3E;
+            border: none;
+            font-size: 1.05rem;
         }
-
-        .submit-btn:hover {
-            background: #b39688;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(139, 101, 78, 0.3);
+        .pill-btn.peach { background: #F7C9C4; }
+        .shadow-soft { box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
+        .img-blob {
+            border-radius: 24px;
         }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.8);
-            color: #7a6a5a;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .hearts {
-            margin: 10px 0;
-            font-size: 1.5rem;
-            color: #d4a5a5;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content {
-                padding: 40px 25px;
-            }
-
-            .book-decoration {
-                font-size: 60px;
-            }
-
-            .details-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .requests-content,
-            .rsvp-form {
-                padding: 35px 25px;
-            }
-
-            .registry-links {
-                gap: 20px;
-            }
-
-            .registry-btn {
-                padding: 15px 35px;
-                font-size: 1.1rem;
-            }
-
-            .radio-group {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
+        /* Larger utilities */
+        .hero-title { font-size: clamp(2.6rem, 3.8vw + 1rem, 3.5rem); color: #666b75; }
+        .img-lg { max-height: 520px; }
+        .img-wide { max-width: 620px; }
+        .section-tight { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+</style>  
 </head>
-<body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <!-- SVG Background -->
-        <svg class="hero-background" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-            <defs>
-                <!-- Gradients for magical effects -->
-                <radialGradient id="bookGlow" cx="50%" cy="50%">
-                    <stop offset="0%" style="stop-color:#d4a5a5;stop-opacity:0.3" />
-                    <stop offset="100%" style="stop-color:#d4a5a5;stop-opacity:0" />
-                </radialGradient>
-                <linearGradient id="pageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#f5e6d3" />
-                    <stop offset="100%" style="stop-color:#e8d5c4" />
-                </linearGradient>
-                
-                <!-- Glow filter -->
-                <filter id="glow">
-                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                    <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-            
-            <!-- Library Shelf Bottom -->
-            <rect x="0" y="650" width="1200" height="150" fill="#8b654e" opacity="0.3"/>
-            <rect x="0" y="640" width="1200" height="20" fill="#6b4d3e" opacity="0.4"/>
-            
-            <!-- Books on Shelf - Left Side -->
-            <g style="animation: floatReverse 4s ease-in-out infinite">
-                <rect x="50" y="550" width="70" height="100" fill="#8b654e" rx="3"/>
-                <rect x="54" y="554" width="62" height="92" fill="#a0826d" rx="2"/>
-                <line x1="85" y1="550" x2="85" y2="650" stroke="#6b4d3e" stroke-width="2"/>
-            </g>
-            
-            <g style="animation: float 3.5s ease-in-out infinite">
-                <rect x="130" y="530" width="60" height="120" fill="#d4a5a5" rx="3"/>
-                <rect x="134" y="534" width="52" height="112" fill="#e8c4c4" rx="2"/>
-                <line x1="160" y1="530" x2="160" y2="650" stroke="#b38888" stroke-width="2"/>
-            </g>
-            
-            <g style="animation: floatReverse 4.2s ease-in-out infinite">
-                <rect x="200" y="560" width="75" height="90" fill="#c6a79a" rx="3"/>
-                <rect x="204" y="564" width="67" height="82" fill="#d8c4b8" rx="2"/>
-                <line x1="237" y1="560" x2="237" y2="650" stroke="#a88879" stroke-width="2"/>
-            </g>
-            
-            <!-- Books on Shelf - Right Side -->
-            <g style="animation: float 3.8s ease-in-out infinite">
-                <rect x="950" y="545" width="65" height="105" fill="#a0826d" rx="3"/>
-                <rect x="954" y="549" width="57" height="97" fill="#b89d88" rx="2"/>
-                <line x1="982" y1="545" x2="982" y2="650" stroke="#8b654e" stroke-width="2"/>
-            </g>
-            
-            <g style="animation: floatReverse 3.3s ease-in-out infinite">
-                <rect x="1025" y="535" width="70" height="115" fill="#d4a5a5" rx="3"/>
-                <rect x="1029" y="539" width="62" height="107" fill="#e8c4c4" rx="2"/>
-                <line x1="1060" y1="535" x2="1060" y2="650" stroke="#b38888" stroke-width="2"/>
-            </g>
-            
-            <g style="animation: float 4.5s ease-in-out infinite">
-                <rect x="1105" y="555" width="80" height="95" fill="#8b654e" rx="3"/>
-                <rect x="1109" y="559" width="72" height="87" fill="#a0826d" rx="2"/>
-                <line x1="1145" y1="555" x2="1145" y2="650" stroke="#6b4d3e" stroke-width="2"/>
-            </g>
-            
-            <!-- Central Open Book -->
-            <g filter="url(#glow)">
-                <ellipse cx="600" cy="700" rx="180" ry="40" fill="url(#bookGlow)">
-                    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
-                </ellipse>
-                
-                <!-- Left page -->
-                <path d="M 420 500 Q 500 480 580 500 L 580 680 Q 500 700 420 680 Z" 
-                      fill="url(#pageGradient)" stroke="#c6a79a" stroke-width="3"/>
-                <line x1="440" y1="520" x2="560" y2="510" stroke="#a88879" stroke-width="1" opacity="0.5"/>
-                <line x1="440" y1="540" x2="560" y2="530" stroke="#a88879" stroke-width="1" opacity="0.5"/>
-                <line x1="440" y1="560" x2="560" y2="550" stroke="#a88879" stroke-width="1" opacity="0.5"/>
-                
-                <!-- Right page -->
-                <path d="M 620 500 Q 700 480 780 500 L 780 680 Q 700 700 620 680 Z" 
-                      fill="url(#pageGradient)" stroke="#c6a79a" stroke-width="3"/>
-                <line x1="640" y1="510" x2="760" y2="520" stroke="#a88879" stroke-width="1" opacity="0.5"/>
-                <line x1="640" y1="530" x2="760" y2="540" stroke="#a88879" stroke-width="1" opacity="0.5"/>
-                <line x1="640" y1="550" x2="760" y2="560" stroke="#a88879" stroke-width="1" opacity="0.5"/>
-                
-                <!-- Book spine -->
-                <rect x="595" y="500" width="10" height="180" fill="#8b654e"/>
-            </g>
-            
-            <!-- Floating Hearts -->
-            <g opacity="0.7">
-                <path d="M 200 300 Q 190 280 200 270 Q 210 280 220 270 Q 230 280 220 300 Q 210 320 200 300" 
-                      fill="#d4a5a5" filter="url(#glow)">
-                    <animateTransform attributeName="transform" type="translate" 
-                        values="0,0; 0,-20; 0,0" dur="3s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
-                </path>
-                
-                <path d="M 950 250 Q 940 230 950 220 Q 960 230 970 220 Q 980 230 970 250 Q 960 270 950 250" 
-                      fill="#d4a5a5" filter="url(#glow)">
-                    <animateTransform attributeName="transform" type="translate" 
-                        values="0,0; 0,20; 0,0" dur="4s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
-                </path>
-                
-                <path d="M 150 150 Q 145 140 150 135 Q 155 140 160 135 Q 165 140 160 150 Q 155 160 150 150" 
-                      fill="#e8c4c4" filter="url(#glow)">
-                    <animateTransform attributeName="transform" type="translate" 
-                        values="0,0; 0,-15; 0,0" dur="3.5s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.5s" repeatCount="indefinite"/>
-                </path>
-            </g>
-            
-            <!-- Flowers -->
-            <g opacity="0.6">
-                <!-- Left flowers -->
-                <circle cx="100" cy="600" r="8" fill="#ffffff"/>
-                <circle cx="115" cy="595" r="6" fill="#ffffff"/>
-                <circle cx="90" cy="595" r="7" fill="#ffffff"/>
-                <line x1="100" y1="608" x2="100" y2="650" stroke="#8fb89a" stroke-width="2"/>
-                
-                <!-- Right flowers -->
-                <circle cx="1100" cy="600" r="8" fill="#ffffff"/>
-                <circle cx="1085" cy="595" r="6" fill="#ffffff"/>
-                <circle cx="1110" cy="595" r="7" fill="#ffffff"/>
-                <line x1="1100" y1="608" x2="1100" y2="650" stroke="#8fb89a" stroke-width="2"/>
-                
-                <!-- Near book flowers -->
-                <circle cx="400" cy="650" r="6" fill="#ffffff" opacity="0.8"/>
-                <circle cx="410" cy="648" r="5" fill="#ffffff" opacity="0.8"/>
-                <circle cx="800" cy="650" r="6" fill="#ffffff" opacity="0.8"/>
-                <circle cx="790" cy="648" r="5" fill="#ffffff" opacity="0.8"/>
-            </g>
-            
-            <!-- Sparkles -->
-            <g>
-                <circle cx="300" cy="200" r="3" fill="#ffffff" opacity="0.8">
-                    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="900" cy="180" r="2" fill="#ffffff" opacity="0.8">
-                    <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
-                </circle>
-                <circle cx="500" cy="150" r="2.5" fill="#ffffff" opacity="0.8">
-                    <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="1s"/>
-                </circle>
-                <circle cx="700" cy="160" r="2" fill="#ffffff" opacity="0.8">
-                    <animate attributeName="opacity" values="0;1;0" dur="2.2s" repeatCount="indefinite" begin="0.8s"/>
-                </circle>
-            </g>
-        </svg>
-
-        <!-- Falling Elements -->
-        <div class="falling-elements" id="fallingElements"></div>
-
-        <div class="hero-content">
-            <div class="book-decoration">📚</div>
-            <h1>Once upon a time,</h1>
-            <p class="subtitle">two hearts grew ready to welcome a tiny new love.<br>
-            Please join us as we celebrate a sweet new chapter —</p>
-            <div class="hearts">♥ ♥</div>
-            <h2 class="title-main">Best Chapter Yet:</h2>
-            <h2 class="title-baby">Baby Contreras</h2>
-        </div>
-    </section>
-
-    <!-- Event Details -->
-    <section class="event-details">
+  <body>
+    <main>
+      <section id="section1" class="py-5">
         <div class="container">
-            <h2 class="section-title">Event Details</h2>
-            <div class="details-grid">
-                <div class="detail-card">
-                    <div class="detail-icon">🎉</div>
-                    <h3>Join Us</h3>
-                    <p><strong>Saturday, January 3, 2026</strong><br>
-                    2:00 PM – 5:00 PM<br>
-                    Northgate Park, Manteca, CA</p>
-                </div>
+          <div class="row g-4">
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+              <h1 class="display-title hero-title mb-2">BEST CHAPTER YET:<br> BABY CONTRERAS</h1>
+              <div class="subtitle fw-bold">DEC 6, 2025</div>
             </div>
-        </div>
-    </section>
-
-    <!-- Special Requests -->
-    <section class="special-requests">
-        <div class="container">
-            <h2 class="section-title">Special Requests</h2>
-            <div class="requests-content">
-                <div class="request-item">
-                    <h3>📖 Bring a Book</h3>
-                    <p>Please bring your favorite children's book or baby story book to help start Baby's first library! We'd love to build a collection filled with stories you cherish. Gently loved baby items are also welcome.</p>
-                </div>
-                <div class="request-item">
-                    <h3>🧥 Dress Code</h3>
-                    <p>Please wear something warm and comfortable to keep you cozy during the celebration.</p>
-                </div>
-                <div class="request-item">
-                    <h3>💌 RSVP</h3>
-                    <p>Please respond by December 20th to Jeremy at (555) 123-4567 or use the form below.</p>
-                </div>
+            <div class="col-md-6 text-center">
+                <img src="1.png" alt="Hero illustration" class="img-fluid img-blob img-lg">
             </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Registry -->
-    <section class="registry">
+      <section id="section2" class="py-5">
         <div class="container">
-            <h2 class="section-title">Baby Registry</h2>
-            <div class="registry-links">
-                <a href="https://www.amazon.com/baby-reg" target="_blank" class="registry-btn">
-                    🛍️ Amazon Registry
-                </a>
-                <a href="https://www.target.com/gift-registry" target="_blank" class="registry-btn">
-                    🎯 Target Registry
-                </a>
+          <div class="row g-4">
+            <div class="col-md-6 text-center d-none d-md-block">
+              <img src="2.png" alt="Hero illustration" class="img-fluid img-blob img-lg">
             </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+              <h2 class="display-title hero-title mb-3">ONCE UPON A TIME..</h2>
+              <p class="mb-0">Two hearts grew ready to welcome a tiny new love. Please join us as we celebrate a sweet new chapter.</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- RSVP Form -->
-    <section class="rsvp" id="rsvp">
+      <section id="section3" class="py-5">
         <div class="container">
-            <h2 class="section-title">RSVP</h2>
-            <form class="rsvp-form" action="https://submit-form.com/YOUR_FORMSPARK_ID" method="POST">
-                <div class="form-group">
-                    <label for="name">Your Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+          <h2 class="display-title hero-title text-center mb-4">EVENT DETAILS</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="peach-card h-100 position-relative">
+                <h3 class="mt-4 play-font">DATE</h3>
+                <p class="mb-0">Join us on Dec 6th, 2025, at 12 PM for a delightful afternoon of celebration and fun!</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="peach-card h-100 position-relative">
+                
+                <h3 class="mt-4 play-font">LOCATION</h3>
+                <p class="mb-0">The celebration will be held at Northgate Park, Manteca, CA. Please wear something warm and comfortable.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="peach-card h-100 position-relative">
+                
+                <h3 class="mt-4 play-font">RSVP</h3>
+                <p class="mb-0">Kindly RSVP using the form below by November 15, 2025, so we can prepare enough refreshments.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <div class="form-group">
-                    <label>Will you be attending? *</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="attending-yes" name="attending" value="Yes" required>
-                            <label for="attending-yes" style="margin-bottom: 0;">Yes</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="attending-no" name="attending" value="No" required>
-                            <label for="attending-no" style="margin-bottom: 0;">No</label>
-                        </div>
-                    </div>
-                </div>
+      <section id="section4" class="py-5">
+        <div class="container">
+          <h2 class="display-title hero-title mb-4">BABY REGISTRY</h2>
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+              <div class="d-grid gap-3" style="max-width:420px;">
+                <button type="button" class="pill-btn peach text-start">📦 Amazon</button>
+                <button type="button" class="pill-btn text-start"> 🎯 Target</button>
+              </div>
+            </div>
+            <div class="col-md-6 text-center">
+              <img src="3.png" alt="Registry image" class="img-fluid img-blob img-wide">
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <div class="form-group">
-                    <label for="message">Message for the Parents</label>
-                    <textarea id="message" name="message" placeholder="Share your love and well wishes..."></textarea>
-                </div>
+      <section id="section5" class="py-5">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center">
+              <img src="4.png" alt="Bring a book image" class="img-fluid img-blob img-wide">
+            </div>
+            <div class="col-md-6">
+              <h2 class="display-title hero-title mb-3">BRING A BOOK</h2>
+              <p class="mb-0">Please bring your favorite children’s book or baby storybook to help start Baby’s first library. We’d love to fill the shelves with stories you love and grew up with. Gently used baby stories are also welcome and appreciated.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <div class="form-group">
-                    <label for="guests">Number of Guests</label>
-                    <input type="number" id="guests" name="guests" min="0" max="10" value="1">
-                </div>
+      <section id="section6" class="py-5">
+        <div class="container">
+          <h2 class="mb-4 text-center display-title hero-title mb-3">RSVP</h2>
+          <form class="row g-3 mx-auto" style="max-width: 720px;">
+            <div class="col-12">
+              <input type="text" class="form-control" placeholder="Full Name">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Email">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Phone">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Number of Guests">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Notes">
+            </div>
+            <div class="col-12 d-grid d-sm-block">
+              <button type="submit" class="btn btn-primary px-4">Submit</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
 
-                <button type="submit" class="submit-btn">Send RSVP</button>
-            </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>
