@@ -31,6 +31,10 @@
              font-weight: 900;
         }
 
+        a.pill-btn {
+          text-decoration: none;
+        }
+
         
         .montserrat-font {
             font-family: "Montserrat", sans-serif;
@@ -126,7 +130,7 @@
             </div>
             <div class="col-md-6 d-flex flex-column justify-content-center">
               <h2 class="display-title hero-title mb-3">ONCE UPON A TIME..</h2>
-              <p class="mb-0">Two hearts grew ready to welcome a tiny new love. Please join us as we celebrate a sweet new chapter.</p>
+              <p class="mb-0">Two hearts began a beautiful new story, and now they are about to welcome its sweetest chapter yet. Join us as we celebrate the arrival of Baby Contreras.</p>
             </div>
           </div>
         </div>
@@ -139,59 +143,28 @@
             <div class="col-md-4">
               <div class="peach-card h-100 position-relative">
                 <h3 class="mt-4 play-font">DATE</h3>
-                <p class="mb-0">Join us on Dec 6th, 2025, at 12 PM for a delightful afternoon of celebration and fun!</p>
+                <p class="mb-0">Join us on Dec 6th, 2025, from 1 PM to 4 PM for a delightful afternoon together.</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="peach-card h-100 position-relative">
                 
                 <h3 class="mt-4 play-font">LOCATION</h3>
-                <p class="mb-0">The celebration will be held at Northgate Park, Manteca, CA. Please wear something warm and comfortable.</p>
+                <p class="mb-0">The celebration will be held at 419 Pinenut St. Oakley, CA 94561.</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="peach-card h-100 position-relative">
                 
                 <h3 class="mt-4 play-font">RSVP</h3>
-                <p class="mb-0">Kindly RSVP using the form below by November 15, 2025, so we can prepare enough refreshments.</p>
+                <p class="mb-0">Kindly let us know if you can join us no later than November 28, 2025.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="section4" class="py-5">
-        <div class="container">
-          <h2 class="display-title hero-title mb-4">BABY REGISTRY</h2>
-          <div class="row g-4 align-items-center">
-            <div class="col-md-6">
-              <div class="d-grid gap-3" style="max-width:420px;">
-                <button type="button" class="pill-btn peach text-start">📦 Amazon</button>
-                <button type="button" class="pill-btn text-start"> 🎯 Target</button>
-              </div>
-            </div>
-            <div class="col-md-6 text-center d-none d-md-block">
-              <img src="3.png" alt="Registry image" class="img-fluid img-blob img-wide">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="section5" class="py-5">
-        <div class="container">
-          <div class="row g-4 align-items-center">
-            <div class="col-md-6 text-center">
-              <img src="4.png" alt="Bring a book image" class="img-fluid img-blob img-lg">
-            </div>
-            <div class="col-md-6">
-              <h2 class="display-title hero-title mb-3">BRING A BOOK</h2>
-              <p class="mb-0">Please bring your favorite children’s book or baby storybook to help start Baby’s first library. We’d love to fill the shelves with stories you love and grew up with. Gently used baby stories are also welcome and appreciated.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="section6" class="py-5">
+       <section id="section4" class="py-5">
         <div class="container">
           <h2 class="mb-4 text-center display-title hero-title mb-3">RSVP</h2>
           <form class="rsvp-card row g-3 mx-auto needs-validation" style="max-width: 720px;" action="https://submit-form.com/CQnKbH0iu">
@@ -206,13 +179,17 @@
               <div class="invalid-feedback">Please enter your name.</div>
             </div>
             <div class="col-md-6">
-              <label for="rsvpGoing" class="form-label">Will You Be Attending?</label>
-              <select id="rsvpGoing" name="attending" class="form-select" required>
-                <option value="" selected disabled>Choose...</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              <div class="invalid-feedback">Please select an option.</div>
+              <fieldset>
+                <label class="form-label">Will You Be Attending?</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="attending" id="attendingYes" value="yes" required>
+                  <label class="form-check-label" for="attendingYes">Yes</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="attending" id="attendingNo" value="no" required>
+                  <label class="form-check-label" for="attendingNo">No</label>
+                </div>
+              </fieldset>
             </div>
             <div class="col-md-6">
               <label for="rsvpGuests" class="form-label">How Many Guests (including you)?</label>
@@ -220,9 +197,8 @@
               <div class="invalid-feedback">Please enter 0 or a positive number.</div>
             </div>
             <div class="col-12">
-              <label for="rsvpMessage" class="form-label">Message to the Parents</label>
-              <textarea id="rsvpMessage" name="message" class="form-control" rows="4" required></textarea>
-              <div class="invalid-feedback">Please enter a message.</div>
+              <label for="rsvpMessage" class="form-label">Message to the Parents (optional)</label>
+              <textarea id="rsvpMessage" name="message" class="form-control" rows="4"></textarea>
             </div>
             <div class="col-12 d-grid">
               <button type="submit" class="btn btn-primary btn-lg">Submit</button>
@@ -230,6 +206,39 @@
           </form>
         </div>
       </section>
+
+      <section id="section5" class="py-5">
+        <div class="container">
+          <h2 class="display-title hero-title mb-4">BABY REGISTRY</h2>
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+              <div class="d-grid gap-3" style="max-width:420px;">
+                <a type="button" class="pill-btn peach text-start" href="https://www.amazon.com/baby-reg/kristinejeremy-pamplonacontreras-february-2026-manteca/2QNBRTP95WRCQ?ref_=cm_sw_r_apin_dp_VFVJ2JNCCVGJ7YDA5DTN&language=en-US" target="_blank">📦 Amazon</a>
+                <a type="button" class="pill-btn text-start" href="https://www.target.com/gift-registry/gift/BabyPamplonaContreras" target="_blank"> 🎯 Target</a>
+              </div>
+            </div>
+            <div class="col-md-6 text-center d-none d-md-block">
+              <img src="3.png" alt="Registry image" class="img-fluid img-blob img-wide">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section6" class="py-5">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center">
+              <img src="4.png" alt="Bring a book image" class="img-fluid img-blob img-lg">
+            </div>
+            <div class="col-md-6">
+              <h2 class="display-title hero-title mb-3">A LITTLE LIBRARY OF LOVE</h2>
+              <p class="mb-0">If you’d like, you’re welcome to bring a favorite children’s book or gently loved storybook to help start Baby’s very first library.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
